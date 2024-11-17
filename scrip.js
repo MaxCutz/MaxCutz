@@ -1,3 +1,6 @@
+// Initialize EmailJS
+emailjs.init("your_user_id");  // Replace with your EmailJS user ID
+
 document.addEventListener('DOMContentLoaded', function () {
     const timeInput = document.getElementById("time");
 
@@ -54,9 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
     // Call the function to set the allowed time intervals when the page loads
     setTimeIntervals();
 
-    // Event listener to handle form submission
+    // Handle form submission
     document.getElementById("bookingForm").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent page reload
+        event.preventDefault(); // Prevent the page from reloading
 
         // Collect form values
         const name = document.getElementById("name").value;
@@ -64,11 +67,22 @@ document.addEventListener('DOMContentLoaded', function () {
         const date = document.getElementById("date").value;
         const time = document.getElementById("time").value;
 
-        // You can now use this data for sending emails, saving to a database, etc.
-        console.log("Booking Details:", { name, email, date, time });
+        // Create an object for the email data
+        const emailParams = {
+            name: name,
+            email: email,
+            date: date,
+            time: time
+        };
 
-        // Display confirmation
-        document.getElementById("confirmation").style.display = "block";
-        document.getElementById("bookingForm").reset(); // Reset form
+        // Send the form data using EmailJS
+        emailjs.send("your_service_id", "your_template_id", emailParams)
+            .then(function (response) {
+                console.log("SUCCESS", response);
+                document.getElementById("confirmation").style.display = "block"; // Show confirmation message
+                document.getElementById("bookingForm").reset(); // Reset the form
+            }, function (error) {
+                console.log("FAILED", error);
+            });
     });
 });
