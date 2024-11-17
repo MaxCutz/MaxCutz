@@ -1,5 +1,5 @@
 // Initialize EmailJS
-emailjs.init("your_user_id");  // Replace with your EmailJS user ID
+emailjs.init("G1O4EV-Ao-9P6M7Tm");  // Replace with your EmailJS user ID
 
 document.addEventListener('DOMContentLoaded', function () {
     const timeInput = document.getElementById("time");
@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Send the form data using EmailJS
-        emailjs.send("your_service_id", "your_template_id", emailParams)
+        emailjs.send("service_eo2bcls", "template_khs0oap", emailParams)
             .then(function (response) {
                 console.log("SUCCESS", response);
                 document.getElementById("confirmation").style.display = "block"; // Show confirmation message
