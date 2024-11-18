@@ -3,6 +3,8 @@ emailjs.init("user_G1O4EV-Ao-9P6M7Tm"); // Replace with your actual Public Key
 
 document.addEventListener("DOMContentLoaded", function () {
     const bookingForm = document.getElementById("bookingForm");
+    const thankYouModal = document.getElementById("thankYouModal");
+    const closeBtn = document.querySelector(".close-btn");
 
     bookingForm.addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent default form submission behavior
@@ -46,9 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
             .then(function (response) {
                 console.log("SUCCESS!", response);
 
-                // Show confirmation message
-                const confirmationMessage = document.getElementById("confirmation");
-                confirmationMessage.style.display = "block";
+                // Show the custom thank you modal
+                thankYouModal.style.display = "block";
 
                 // Reset the form
                 bookingForm.reset();
@@ -67,5 +68,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 submitButton.textContent = "Book Now";
                 submitButton.disabled = false;
             });
+    });
+
+    // Close the modal when the close button is clicked
+    closeBtn.addEventListener("click", function () {
+        thankYouModal.style.display = "none";
+    });
+
+    // Close the modal if the user clicks anywhere outside of the modal
+    window.addEventListener("click", function (event) {
+        if (event.target === thankYouModal) {
+            thankYouModal.style.display = "none";
+        }
     });
 });
