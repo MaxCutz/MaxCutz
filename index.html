@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barber Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to MaxCutz</h1>
+        <p>Book a haircut Now!</p>
+    </header>
+   
+    <main>
+        <h2>Book Now</h2>
+        <form id="bookingForm">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="date">Choose a Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Choose a Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="submit">Book Now</button>
+        </form>
+
+        <!-- Confirmation message -->
+        <div id="confirmation" style="display: none;">
+            <p>Thank you! Your booking has been confirmed.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 MaxCutz</p>
+    </footer>
+
+    <!-- Include EmailJS script -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
