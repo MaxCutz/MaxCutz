@@ -1,5 +1,5 @@
 // Initialize EmailJS with your User ID
-emailjs.init("YOUR_USER_ID"); // Replace with your actual EmailJS User ID
+emailjs.init("user_G1O4EV-Ao-9P6M7Tm"); // Replace with your actual Public Key
 
 document.addEventListener("DOMContentLoaded", function () {
     const bookingForm = document.getElementById("bookingForm");
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // Send the email using EmailJS
         emailjs
-            .send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", emailData)
+            .send("service_9k5plsk", "template_khs0oap", emailData)
             .then(function (response) {
                 console.log("SUCCESS!", response);
                 // Show confirmation message
