@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Send the form data using EmailJS
-        emailjs.send(service_eo2bcls, template_khs0oap, emailParams)
+        emailjs.send(service_9k5plsk, template_khs0oap, emailParams)
             .then(function (response) {
                 console.log("SUCCESS", response);
                 document.getElementById("confirmation").style.display = "block"; // Show confirmation message
